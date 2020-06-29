@@ -1,0 +1,176 @@
+<?php session_start(); ?>
+<?php
+if(empty($_SESSION['logv']) || $_SESSION['logv'] == ''){
+    header("Location: loginuser.html");
+    die();
+}
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Image Upload</title>
+
+ <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+    body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: blue;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+
+
+
+</style>
+
+</head>
+<body>
+
+  
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+          <img src="3A logo.jpg" alt="">
+        </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item ">
+          <a class="nav-link" href="userfront.php">Home
+                <span class="sr-only">(current)</span>
+              </a>
+        </li>
+		<li class="nav-item ">
+          <a class="nav-link" href="Allplaces.php">AllPlaces</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="userquestionary.php">Suitable Location</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="feedback.php">Feedback</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="search.php">Search</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link confirm" href="logoutuser.php">logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="content">
+  <form method="POST" action="feedbackcode.php" enctype="multipart/form-data">
+ 
+
+  <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+             
+  <div class="container">
+
+    <h1>ADD FeedBack</h1>
+    <p>Please fill in this form to add.</p>
+    <hr>
+
+
+    <label for="username"><b>Username</b></label>
+    <input type="text" value="<?PHP if(isset($_SESSION['user_name'])){echo $_SESSION['user_name'];}?>" name="username" required>
+
+    
+    <label for="placename"><b>Placename</b></label>
+    <input type="text" placeholder="Placename" name="place" required>
+
+    <div class="form-group">
+  <label for="feedback">Feedback:</label>
+  <textarea class="form-control" name="feedback" rows="5" id="comment"required></textarea>
+  <div class="btn-box">
+                        <button type="submit" id="submit" class="btn btn-primary" value="submit">Submit</button>
+                    </div>
+
+ </form>
+
+</div>
+</div>
+</div>
+
+
+</body>
+</html>   
+<script type="text/javascript">
+    $('.confirm').on('click', function () {
+        return confirm('Are you sure want to logout?');
+    });
+</script>
+
+

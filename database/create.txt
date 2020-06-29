@@ -1,0 +1,58 @@
+CREATE TABLE `addp` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `name` varchar(30) NOT NULL,
+ `addr` varchar(25) NOT NULL,
+ `area` varchar(20) NOT NULL,
+ `tags` varchar(50) NOT NULL,
+ `de` varchar(300) NOT NULL,
+ `img` varchar(500) NOT NULL,
+ `image_text` varchar(25) DEFAULT NULL,
+ `loctype` varchar(255) DEFAULT NULL,
+ `thingstodo` varchar(255) DEFAULT NULL,
+ `accom` varchar(20) DEFAULT NULL,
+ `Best_Season` varchar(20) DEFAULT NULL,
+ `lat` double NOT NULL,
+ `lon` double NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1
+
+
+CREATE TABLE `feedback` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `username` varchar(20) NOT NULL,
+ `place` varchar(20) NOT NULL,
+ `feedback` varchar(250) NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1
+
+CREATE TABLE `login` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `username` varchar(100) NOT NULL,
+ `password` varchar(100) NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1
+
+
+
+
+CREATE TABLE `question` (
+ `ques` varchar(50) NOT NULL,
+ `opt1` varchar(50) NOT NULL,
+ `opt2` varchar(50) NOT NULL,
+ `opt3` varchar(50) NOT NULL,
+ `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1
+
+CREATE TABLE `regt` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `username` varchar(255) NOT NULL,
+ `password` varchar(255) NOT NULL,
+ `email` varchar(255) NOT NULL,
+ `fname` varchar(255) NOT NULL,
+ `lname` varchar(255) NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1
+
+
+
